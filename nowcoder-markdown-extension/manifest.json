@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "牛客网Markdown提取器",
+  "version": "1.0.0",
+  "description": "从牛客网题目页面提取题目内容并转换为Markdown格式复制到剪贴板",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ac.nowcoder.com/acm/problem/*",
+        "https://ac.nowcoder.com/acm/contest/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "clipboardWrite"
+  ]
+}
